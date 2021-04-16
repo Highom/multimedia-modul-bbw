@@ -80,7 +80,7 @@
 
 .imgdiv p{
   position: absolute;
-  left: 0.8rem;
+  left: -0.5rem;
   transform: rotate(-45deg);
   margin-top: 1rem;
   color: black;
