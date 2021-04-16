@@ -62,10 +62,20 @@
   border-color: #3b4252!important;
 }
 
+.card-img-top{
+  transition: filter 1s ease-in-out;
+  transform-origin: center center;
+  filter: brightness(70%);
+}
+
+.card:hover .card-img-top{
+  filter: brightness(100%);
+}
+
 .imgdiv{
   margin-bottom: 5px;
   overflow: hidden;
-  transition: transform .5s ease;
+  transition: transform .25s ease;
 }
 
 .imgdiv p{

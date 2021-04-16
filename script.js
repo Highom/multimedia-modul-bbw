@@ -5,7 +5,7 @@ var images = [["lenny", "Here the bottle magically fell down"]]; // ["image name
 //remove the loading message
 imgWrapper.removeChild(imgWrapper.children[0]);      
 
-images.forEach(function(image) {
+images.forEach(function(image, i) {
     const div = document.createElement("div");
     const imgdiv1 = document.createElement("div");
     const imgdiv2 = document.createElement("div");
@@ -13,16 +13,17 @@ images.forEach(function(image) {
     const afterText = document.createElement("p");
     const img1 = document.createElement("img");
     const img2 = document.createElement("img");
-    const text = document.createElement("p")
+    const text = document.createElement("p");
 
-    div.className = "col-sm-4 col-xs-12 flex-item card"
-    imgdiv1.className = "imgdiv"
-    imgdiv2.className = "imgdiv"
-    img1.className = "img-fluid"
-    img2.className = "img-fluid"
+    div.className = "col-sm-4 col-xs-12 flex-item card";
+    div.id = "imgBeforeAfter" + (i+1);
+    imgdiv1.className = "imgdiv";
+    imgdiv2.className = "imgdiv";
+    img1.className = "img-fluid";
+    img2.className = "img-fluid";
     img1.src = imgFolder + image[0] + "-1.jpg";
     img2.src = imgFolder + image[0] + "-2.jpg";
-    text.textContent = image[1]
+    text.textContent = image[1];
     beforeText.textContent = "Before";
     afterText.textContent = "After";
 
