@@ -1,0 +1,102 @@
+ body {
+  background-color: #3b4252;
+  color: #eceff4;
+}
+
+.card {
+  background-color: #4c566a!important;
+  color: #eceff4!important;  
+}
+
+.display-3{
+  font-weight: bold;
+  text-shadow: 4px 4px #bf616a;
+}
+
+.navbar {
+  margin-bottom: 0px;
+}
+
+.jumbotron {
+  height: 100vh;
+  background: url("media/background.jpg") no-repeat center;
+}
+
+.jumbotron {
+  color: #eceff4;
+}
+
+.jumbotron > div,
+.jumbotron > div > div {
+  height: 100%;
+}
+
+.footer {
+  background-color: #434c5e;
+  color: #e5e9f0;
+}
+
+.height-25 {
+  height: 25rem;
+}
+
+.headerfooter {
+ background-color: #2e3440;
+}
+
+.copyright {
+  margin: 0;
+}
+
+.btn-primary .btn-secondary{
+  color: #eceff4!important;
+}
+
+.btn-primary {
+  background-color: #5e81ac!important;
+  border-color: #5e81ac!important;
+}
+
+.btn-secondary{
+  background-color: #3b4252!important;
+  border-color: #3b4252!important;
+}
+
+.imgdiv{
+  margin-bottom: 5px;
+  overflow: hidden;
+  transition: transform .5s ease;
+}
+
+.imgdiv p{
+  position: absolute;
+  left: 0.8rem;
+  transform: rotate(-45deg);
+  margin-top: 1rem;
+  color: black;
+  font-weight: bold;
+  font-size: 2rem;
+  text-shadow: 0.1rem 0.1rem #424db8;
+}
+
+.imgdiv:hover{
+  transform: scale(1.5);
+  z-index: 999;
+}
+
+.flex-wrapper{
+  flex-wrap: wrap;
+  align-content: flex-start;
+  margin-left: -15px;
+  margin-right: -15px;
+  display: flex;
+  text-align: center;
+}
+
+.flex-item {
+  margin-bottom: 40px;
+  padding-left: 0px;
+  padding-right: 0px;
+  display: flex;
+  flex-direction: column;
+}
