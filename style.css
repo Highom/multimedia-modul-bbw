@@ -72,27 +72,41 @@
   filter: brightness(100%);
 }
 
-.imgdiv{
+.imgdiv .imgdivVertical{
   margin-bottom: 5px;
   overflow: hidden;
+}
+
+.imgdiv{  
   transition: transform .25s ease;
 }
 
-.imgdiv p{
+.imgdivVertical img{
+  transition: filter .25s ease;
+  filter: blur(2px);
+}
+
+
+.imgdiv p, .imgdivVertical p{
   position: absolute;
-  left: -0.5rem;
   transform: rotate(-45deg);
   margin-top: 1rem;
   color: black;
   font-weight: bold;
   font-size: 2rem;
   text-shadow: 0.1rem 0.1rem #424db8;
+  z-index: 1;
 }
 
 .imgdiv:hover{
   transform: scale(1.5);
   z-index: 999;
 }
+
+#pictureWrapperVertical .flex-item:hover img{
+  filter: blur(0px);
+}
+
 
 .flex-wrapper{
   flex-wrap: wrap;
@@ -109,4 +123,9 @@
   padding-right: 0px;
   display: flex;
   flex-direction: column;
+}
+
+.imgrow{
+  display: flex;
+  flex-direction: row;
 }
