@@ -118,14 +118,25 @@
 }
 
 .flex-item {
-  margin-bottom: 40px;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  margin-bottom: 2rem;
   padding-left: 0px;
   padding-right: 0px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
+
+.flex-item p{
+  margin-left: 1px;
+  margin-right: 1px;
+}
+
 
 .imgrow{
   display: flex;
   flex-direction: row;
+  flex-grow: 1;
+  align-items: center;
 }
