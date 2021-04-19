@@ -8,6 +8,7 @@ var imagesVertical = [["debiTrain", "Here I used a Gradient to create a duotone 
 imgWrapper.removeChild(imgWrapper.children[0]);      
 
 images.forEach(function(image, i) {
+    const flexdiv = document.createElement("div");
     const div = document.createElement("div");
     const imgdiv1 = document.createElement("div");
     const imgdiv2 = document.createElement("div");
@@ -17,8 +18,9 @@ images.forEach(function(image, i) {
     const img2 = document.createElement("img");
     const text = document.createElement("p");
 
-    div.className = "col-sm-4 col-xs-12 flex-item card";
-    div.id = "imgBeforeAfter" + (i+1);
+    flexdiv.className = "col-sm-4 col-xs-12 flex-item";
+    flexdiv.id = "imgBeforeAfter" + (i+1);
+    div.className = "card h-100" 
     imgdiv1.className = "imgdiv";
     imgdiv2.className = "imgdiv";
     img1.className = "img-fluid";
@@ -29,7 +31,8 @@ images.forEach(function(image, i) {
     beforeText.textContent = "Before";
     afterText.textContent = "After";
 
-    imgWrapper.appendChild(div);
+    imgWrapper.appendChild(flexdiv);
+    flexdiv.appendChild(div)
     div.appendChild(imgdiv1);
     div.appendChild(imgdiv2);
     div.appendChild(text);

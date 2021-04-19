@@ -78,7 +78,7 @@
   overflow: hidden;
 }
 
-.img-blur{
+ .img-blur{
   transition: filter .25s ease;
   filter: blur(2px);
 }
@@ -90,14 +90,19 @@
   margin-top: 1rem;
   color: black;
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 1.4rem;
   text-shadow: 0.1rem 0.1rem #424db8;
   z-index: 1;
+  transition: filter .10s ease;
 }
 
 .imgdiv:hover{
   transform: scale(1.5);
   z-index: 999;
+}
+
+.imgdiv:hover p{
+  filter: opacity(0);
 }
 
 .flex-item:hover .img-blur{
