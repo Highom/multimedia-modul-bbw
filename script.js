@@ -1,7 +1,7 @@
 var imgWrapper = document.getElementById("pictureWrapper")
 var imgVerticalWrapper = document.getElementById("pictureWrapperVertical")
 var imgFolder = "media/images/"
-var images = [["lenny", "Here the bottle magically fell down"]]; // ["image name", "image text"]
+var images = [] // ["image name", "image text"]
 var imagesVertical = [["debiTrain", "Here I used a Gradient to create a duotone effect"],["Pepijn","Here I used overlays and color shifts to create a glitch like effect. The text is made with a drop shadow"]]; // ["image name", "image text"]
 
 //remove the loading message
