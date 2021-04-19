@@ -2,7 +2,7 @@ var imgWrapper = document.getElementById("pictureWrapper")
 var imgVerticalWrapper = document.getElementById("pictureWrapperVertical")
 var imgFolder = "media/images/"
 var images = [["ceJa", "cutting out part of image and replacing it with another image + brightness adjustment on the other image"]] // ["image name", "image text"]
-var imagesVertical = [["debiTrain", "Here I used a Gradient to create a duotone effect"],["Pepijn","Here I used overlays and color shifts to create a glitch like effect. The text is made with a drop shadow"]]; // ["image name", "image text"]
+var imagesVertical = [["debiTrain", "Here I used a Gradient to create a duotone effect"],["Pepijn","Here I used overlays and color shifts to create a glitch like effect. The text is made with a drop shadow"], ["vacation","changed the background and added other images into it, then added text with a drop shadow again"]]; // ["image name", "image text"]
 
 //remove the loading message
 imgWrapper.removeChild(imgWrapper.children[0]);      
@@ -42,6 +42,7 @@ images.forEach(function(image, i) {
 imgVerticalWrapper.removeChild(imgVerticalWrapper.children[0]);      
 
 imagesVertical.forEach(function(image, i) {
+    const flexdiv = document.createElement("div");
     const div = document.createElement("div");
     const imgsdiv = document.createElement("div");
     const imgdiv1 = document.createElement("div");
@@ -52,8 +53,9 @@ imagesVertical.forEach(function(image, i) {
     const img2 = document.createElement("img");
     const text = document.createElement("p");
 
-    div.className = "col-sm-4 col-xs-12 flex-item card";
-    div.id = "imgBeforeAfter" + (i+1);
+    flexdiv.className = "col-sm-4 col-xs-12 flex-item";
+    flexdiv.id = "imgBeforeAfter" + (i+1);
+    div.className = "card h-100" 
     imgsdiv.className = "imgrow"
     imgdiv1.className = "imgdiv";
     imgdiv2.className = "imgdiv";
@@ -65,7 +67,8 @@ imagesVertical.forEach(function(image, i) {
     beforeText.textContent = "Before";
     afterText.textContent = "After";
 
-    imgVerticalWrapper.appendChild(div);
+    imgVerticalWrapper.appendChild(flexdiv);
+    flexdiv.appendChild(div);
     div.appendChild(imgsdiv);
     imgsdiv.appendChild(imgdiv1);
     imgsdiv.appendChild(imgdiv2);

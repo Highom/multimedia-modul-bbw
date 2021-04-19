@@ -115,11 +115,7 @@
 }
 
 .flex-item {
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
   margin-bottom: 2rem;
-  padding-left: 0px;
-  padding-right: 0px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
