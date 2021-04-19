@@ -72,22 +72,19 @@
   filter: brightness(100%);
 }
 
-.imgdiv .imgdivVertical{
+.imgdiv{
   margin-bottom: 5px;
+  transition: transform .25s ease;
   overflow: hidden;
 }
 
-.imgdiv{  
-  transition: transform .25s ease;
-}
-
-.imgdivVertical img{
+.img-blur{
   transition: filter .25s ease;
   filter: blur(2px);
 }
 
 
-.imgdiv p, .imgdivVertical p{
+.imgdiv p{
   position: absolute;
   transform: rotate(-45deg);
   margin-top: 1rem;
@@ -103,7 +100,7 @@
   z-index: 999;
 }
 
-#pictureWrapperVertical .flex-item:hover img{
+.flex-item:hover .img-blur{
   filter: blur(0px);
 }
 
