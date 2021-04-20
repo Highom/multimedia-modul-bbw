@@ -77,10 +77,9 @@
   overflow: hidden;
 }
 
-  .flex-item .staticImgLib{
+.img-enlargeable{
   cursor: pointer;
 }
-
 
 .imgdiv p{
   position: absolute;
