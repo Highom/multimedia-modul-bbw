@@ -15,6 +15,9 @@ const images = [
     ,["vacation","changed the background and added other images into it, then added text with a drop shadow again"]
     ,["Pepijn","Here I used overlays and color shifts to create a glitch like effect. The text is made with a drop shadow"]
     ,["debiTrain", "Here I used a Gradient to create a duotone effect"]
+    ,["background", "The Image has been sharpened and cropped. Then, the whole image was blurred so that it can be used better as a background image"]
+    ,["jabra", "The Image got croppped and the Colors were adjusted to look more dreamy"]
+    ,["kb", "The Image got cropped"]
 ];
 
 const carouselImages = ["DSC_0606.jpg","DSC_0607.jpg","DSC_0608.jpg","DSC_0613.jpg"];
