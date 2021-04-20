@@ -20,7 +20,7 @@ const images = [
     ,["kb", "The Image got cropped"]
 ];
 
-const carouselImages = ["DSC_0606.jpg","DSC_0607.jpg","DSC_0608.jpg","DSC_0613.jpg"];
+const carouselImages = ["DSC_0481.jpg","DSC_0606.jpg","DSC_0607.jpg","DSC_0608.jpg","DSC_0613.jpg"];
 
 imgTechniqueWrapper.removeChild(imgTechniqueWrapper.children[0]);
 
