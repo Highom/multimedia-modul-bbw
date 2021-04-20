@@ -6,6 +6,9 @@ const imgFolderTechnique = "media/technique/";
 const imgFolderCarousel = "media/exampleImgs/";
 const imagesTechnique = [
     ["charlie","Here we worked with the depth of field. The first image has a wide aperture and because of that almost everything is in focus. The second one was shot with a small aperture and because of it, only Charlie (my dog) is in focus while the Background is blurred out"]
+    ,["iso","In the first pic I used an ISO of 400 with an exposure time of 1/50. The second picture uses an ISO of Hi1. To not overlight the second picture with the high ISO I needed to use an exposure time of 1/4000. As you can see the higher ISO gives the Image more noise. But in dark enviroments where the exposure time can't be longer, the ISO can be used to make the image more bright"]
+    ,["exposure","the first picture uses an exposure time of 1/50 while the second one uses an exposure time of 1/10. As you can see, the longer the exposure time, the more light gets caught by the camera. With longer exposure time stabilisation becomes a bigger issue as small movements could make the image loose focus"]
+    ,["onethree", "the first picture uses the 1/3 rule. one third of the image is ground while the rest is sky. the second one is just 50/50. As you can see the 1/3 rule makes the image more aesthetically pleasing"]
 ] // ["image name", "image text"]
 const images = [
     ["ceJa", "cutting out part of image and replacing it with another image + brightness adjustment on the other image"]
