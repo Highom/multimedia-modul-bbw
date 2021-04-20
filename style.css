@@ -74,13 +74,13 @@
 
 .imgdiv{
   margin-bottom: 5px;
-  transition: transform .25s ease;
   overflow: hidden;
 }
 
- .img-blur{
+ .staticImgLib{
   transition: filter .25s ease;
   filter: blur(2px);
+  cursor: zoom-in;
 }
 
 
@@ -93,26 +93,24 @@
   font-size: 1.4rem;
   text-shadow: 0.1rem 0.1rem #424db8;
   z-index: 1;
-  transition: filter .10s ease;
 }
 
-.imgdiv:hover{
-  transform: scale(1.5);
+.imgdiv img{
+  transition: transform .5s ease;
+}
+
+.imgdiv:hover img{
+  transform: scale(1.1);
   z-index: 999;
 }
 
-.imgdiv:hover p{
-  filter: opacity(0);
-}
-
-.flex-item:hover .img-blur{
+.flex-item:hover .staticImgLib{
   filter: blur(0px);
 }
 
 
 .flex-wrapper{
   flex-wrap: wrap;
-  align-content: flex-start;
   margin-left: -15px;
   margin-right: -15px;
   display: flex;
