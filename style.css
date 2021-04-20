@@ -86,10 +86,10 @@
   position: absolute;
   transform: rotate(-45deg);
   margin-top: 1rem;
-  color: black;
+  color: #2e3440;
   font-weight: bold;
   font-size: 1.4rem;
-  text-shadow: 0.1rem 0.1rem #424db8;
+  text-shadow: 0.1rem 0.1rem #88c0d0;
   z-index: 1;
 }
 
