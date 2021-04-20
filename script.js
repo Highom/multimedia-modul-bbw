@@ -1,6 +1,6 @@
-var imgWrapper = document.getElementById("pictureWrapper")
+var imgWrapperEditing = document.getElementById("pictureWrapperEditing")
 var imgTechniqueWrapper = document.getElementById("pictureWrapperTechnique")
-var imgFolder = "media/images/"
+var imgFolderEditing = "media/editing/"
 var imgFolderTechnique = "media/technique/"
 var imagesTechnique = [
 ]
@@ -46,7 +46,7 @@ imagesTechnique.forEach(function(image, i) {
 });
 
 //remove the loading message
-imgWrapper.removeChild(imgWrapper.children[0]);
+imgWrapperEditing.removeChild(imgWrapperEditing.children[0]);
 
 images.forEach(function(image, i) {
     const flexdiv = document.createElement("div");
@@ -68,13 +68,13 @@ images.forEach(function(image, i) {
     imgdiv2.className = "imgdiv";
     img1.className = "img-fluid staticImgLib img-enlargeable";
     img2.className = "img-fluid staticImgLib img-enlargeable";
-    img1.src = imgFolder + image[0] + "-1.jpg";
-    img2.src = imgFolder + image[0] + "-2.jpg";
+    img1.src = imgFolderEditing + image[0] + "-1.jpg";
+    img2.src = imgFolderEditing + image[0] + "-2.jpg";
     text.textContent = image[1];
     beforeText.textContent = "Before";
     afterText.textContent = "After";
 
-    imgWrapper.appendChild(flexdiv);
+    imgWrapperEditing.appendChild(flexdiv);
     flexdiv.appendChild(div);
     div.appendChild(imgsdiv);
     imgsdiv.appendChild(imgdiv1);
