@@ -3,12 +3,13 @@ var imgTechniqueWrapper = document.getElementById("pictureWrapperTechnique")
 var imgFolderEditing = "media/editing/"
 var imgFolderTechnique = "media/technique/"
 var imagesTechnique = [
+    ["charlie","Here we worked with the depth of field. The first image has a wide aperture and because of that almost everything is in focus. The second one was shot with a small aperture and because of it, only Charlie (my dog) is in focus while the Background is blurred out"]
 ]
 var images = [
-    ["ceJa", "cutting out part of image and replacing it with another image + brightness adjustment on the other image"],
-    ["vacation","changed the background and added other images into it, then added text with a drop shadow again"],
-    ["Pepijn","Here I used overlays and color shifts to create a glitch like effect. The text is made with a drop shadow"],
-    ["debiTrain", "Here I used a Gradient to create a duotone effect"]
+    ["ceJa", "cutting out part of image and replacing it with another image + brightness adjustment on the other image"]
+    ,["vacation","changed the background and added other images into it, then added text with a drop shadow again"]
+    ,["Pepijn","Here I used overlays and color shifts to create a glitch like effect. The text is made with a drop shadow"]
+    ,["debiTrain", "Here I used a Gradient to create a duotone effect"]
 ]; // ["image name", "image text"]  
 
 imgTechniqueWrapper.removeChild(imgTechniqueWrapper.children[0]);
