@@ -110,7 +110,7 @@ carouselImages.forEach(function(image, i) {
         carouselItem.className = "carousel-item";
     }
     img.src = imgFolderCarousel + image;
-    img.className = "img-fluid";
+    img.className = "img-fluid img-enlargeable";
     carouselCaption.className = "carousel-caption d-none d-md-block"
 
     carouselItem.appendChild(img);
