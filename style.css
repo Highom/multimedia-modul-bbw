@@ -77,10 +77,10 @@
   overflow: hidden;
 }
 
- .staticImgLib{
+  .flex-item .staticImgLib{
   transition: filter .25s ease;
   filter: blur(2px);
-  cursor: zoom-in;
+  cursor: pointer;
 }
 
 
