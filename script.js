@@ -1,16 +1,20 @@
-var imgWrapperEditing = document.getElementById("pictureWrapperEditing")
-var imgTechniqueWrapper = document.getElementById("pictureWrapperTechnique")
-var imgFolderEditing = "media/editing/"
-var imgFolderTechnique = "media/technique/"
-var imagesTechnique = [
+const imgWrapperEditing = document.getElementById("pictureWrapperEditing");
+const imgTechniqueWrapper = document.getElementById("pictureWrapperTechnique");
+const carouselInner = document.getElementsByClassName("carousel-inner")[0];
+const imgFolderEditing = "media/editing/";
+const imgFolderTechnique = "media/technique/";
+const imgFolderCarousel = "media/exampleImgs/";
+const imagesTechnique = [
     ["charlie","Here we worked with the depth of field. The first image has a wide aperture and because of that almost everything is in focus. The second one was shot with a small aperture and because of it, only Charlie (my dog) is in focus while the Background is blurred out"]
-]
-var images = [
+] // ["image name", "image text"]
+const images = [
     ["ceJa", "cutting out part of image and replacing it with another image + brightness adjustment on the other image"]
     ,["vacation","changed the background and added other images into it, then added text with a drop shadow again"]
     ,["Pepijn","Here I used overlays and color shifts to create a glitch like effect. The text is made with a drop shadow"]
     ,["debiTrain", "Here I used a Gradient to create a duotone effect"]
-]; // ["image name", "image text"]  
+];
+
+const carouselImages = ["DSC_0606.jpg","DSC_0607.jpg","DSC_0608.jpg","DSC_0613.jpg"];
 
 imgTechniqueWrapper.removeChild(imgTechniqueWrapper.children[0]);
 
@@ -87,6 +91,29 @@ images.forEach(function(image, i) {
     imgdiv2.appendChild(img2);
 });
 
+
+carouselImages.forEach(function(image, i) {
+    const carouselItem = document.createElement("div");
+    const carouselCaption = document.createElement("div");
+    const img = document.createElement("img");
+
+
+    if (i == 0) {
+        carouselItem.className = "carousel-item active";        
+    }else{
+        carouselItem.className = "carousel-item";
+    }
+    img.src = imgFolderCarousel + image;
+    img.className = "img-fluid";
+    carouselCaption.className = "carousel-caption d-none d-md-block"
+
+    carouselItem.appendChild(img);
+    carouselItem.appendChild(carouselCaption)
+    carouselInner.appendChild(carouselItem);
+});
+
+
+//make images with .img-enlargeable full screen on click
 $('.img-enlargeable').click(function() {
     var src = $(this).attr('src');
     var modal;
