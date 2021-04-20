@@ -78,8 +78,6 @@
 }
 
   .flex-item .staticImgLib{
-  transition: filter .25s ease;
-  filter: blur(2px);
   cursor: pointer;
 }
 
@@ -103,11 +101,6 @@
   transform: scale(1.1);
   z-index: 999;
 }
-
-.flex-item:hover .staticImgLib{
-  filter: blur(0px);
-}
-
 
 .flex-wrapper{
   flex-wrap: wrap;
