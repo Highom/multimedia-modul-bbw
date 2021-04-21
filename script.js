@@ -10,7 +10,7 @@ const imagesTechnique = [
     ,["exposure","the first picture uses an exposure time of 1/50 while the second one uses an exposure time of 1/10. As you can see, the longer the exposure time, the more light gets caught by the camera. With longer exposure time stabilisation becomes a bigger issue as small movements could make the image loose focus"]
     ,["onethree", "the first picture uses the 1/3 rule. one third of the image is ground while the rest is sky. the second one is just 50/50. As you can see the 1/3 rule makes the image more aesthetically pleasing"]
 ] // ["image name", "image text"]
-const images = [
+const imagesEditing = [
     ["ceJa", "cutting out part of image and replacing it with another image + brightness adjustment on the other image"]
     ,["vacation","changed the background and added other images into it, then added text with a drop shadow again"]
     ,["Pepijn","Here I used overlays and color shifts to create a glitch like effect. The text is made with a drop shadow"]
@@ -59,7 +59,7 @@ imagesTechnique.forEach(function(image, i) {
 //remove the loading message
 imgWrapperEditing.removeChild(imgWrapperEditing.children[0]);
 
-images.forEach(function(image, i) {
+imagesEditing.forEach(function(image, i) {
     const flexdiv = document.createElement("div");
     const div = document.createElement("div");
     const imgsdiv = document.createElement("div");
