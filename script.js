@@ -18,6 +18,7 @@ const imagesEditing = [
     ,["background", "The Image has been sharpened and cropped. Then, the whole image was blurred so that it can be used better as a background image"]
     ,["jabra", "The Image got croppped and the Colors were adjusted to look more dreamy"]
     ,["kb", "The Image got cropped"]
+    ,["pfp","Here I cropped the Picture and removed myself from the background"]
 ];
 
 const carouselImages = ["DSC_0481.jpg","DSC_0606.jpg","DSC_0607.jpg","DSC_0608.jpg","DSC_0613.jpg"];
