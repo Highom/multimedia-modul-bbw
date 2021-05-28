@@ -19,7 +19,6 @@
     <nav class="navbar navbar-expand-lg navbar-dark headerfooter">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
-          <!--TODO make logo animated on hover-->
           <img
             class="logo"
             src="media/logo.png"
@@ -99,6 +98,11 @@
                 These headphones are a great companion in your training sessions
               </p>
             </div>
+            <div class="card-footer py-4">
+              <button type="button" class="btn btn-secondary video-btn" data-toggle="modal" data-src="media/videos/placeholder.mp4" data-target="#myModal">
+                Play advertisement
+              </button>
+            </div>
           </div>
         </div>
         <div class="col-md-4 mb-4">
@@ -173,6 +177,22 @@
         </div>
       </div>
   </section>
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>        
+          <!-- 16:9 aspect ratio -->
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="" id="video" allowscriptaccess="always" allow="autoplay"></iframe>
+          </div>   
+        </div>
+      </div>
+    </div>
+  </div> 
   <section id="information">
     <div class="container text-center">
       <h2 class="display-4 text-center mt-3 mb-3">Information</h2>
