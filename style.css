@@ -129,6 +129,13 @@
   align-items: center;
 }
 
+.btn {
+  color: #81a1c1;;
+}
+.btn:hover {
+  color: #5e81ac;;
+}
+
 /*background video*/
 header {
   position: relative;
@@ -178,7 +185,6 @@ header .overlay {
     display: none;
   }
 }
-
 
 /*Modal Video*/
 .modal-dialog {
