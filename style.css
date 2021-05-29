@@ -48,18 +48,29 @@
   margin: 0;
 }
 
-.btn-primary .btn-secondary{
-  color: #eceff4!important;
-}
-
 .btn-primary {
   background-color: #5e81ac!important;
   border-color: #5e81ac!important;
 }
 
+.btn-primary{
+  color: #eceff4!important;
+}
+
 .btn-secondary{
   background-color: #3b4252!important;
   border-color: #3b4252!important;
+}
+
+.btn {
+  color: #81a1c1;
+}
+.btn:hover {
+  color: #5e81ac;
+}
+
+.btn:active {
+  color: #d8dee9;
 }
 
 .card-img-top{
@@ -127,17 +138,6 @@
   flex-direction: row;
   flex-grow: 1;
   align-items: center;
-}
-
-.btn {
-  color: #81a1c1;
-}
-.btn:hover {
-  color: #5e81ac;
-}
-
-.btn:active {
-  color: #d8dee9;
 }
 
 /*background video*/
