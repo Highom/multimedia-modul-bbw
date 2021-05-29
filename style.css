@@ -17,20 +17,6 @@
   margin-bottom: 0px;
 }
 
-/* .jumbotron {
-  height: 100vh;
-  background: url("media/editing/background-2.jpg") no-repeat center;
-}
-
-.jumbotron {
-  color: #eceff4;
-}
-
-.jumbotron > div,
-.jumbotron > div > div {
-  height: 100%;
-} */
-
 .footer {
   background-color: #434c5e;
   color: #e5e9f0;
@@ -179,15 +165,6 @@ header .overlay {
   background-color: black;
   opacity: 0.5;
   z-index: 1;
-}
-
-@media (pointer: coarse) and (hover: none) {
-  header {
-    background: url('https://source.unsplash.com/XT5OInaElMw/1600x900') black no-repeat center center scroll;
-  }
-  header video {
-    display: none;
-  }
 }
 
 /*Modal Video*/
