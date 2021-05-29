@@ -130,10 +130,14 @@
 }
 
 .btn {
-  color: #81a1c1;;
+  color: #81a1c1;
 }
 .btn:hover {
-  color: #5e81ac;;
+  color: #5e81ac;
+}
+
+.btn:active {
+  color: #d8dee9;
 }
 
 /*background video*/
