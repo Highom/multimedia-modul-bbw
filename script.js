@@ -1,8 +1,10 @@
 const imgWrapperEditing = document.getElementById("pictureWrapperEditing");
 const imgTechniqueWrapper = document.getElementById("pictureWrapperTechnique");
+const VideoTechniqueWrapper = document.getElementById("VideoTechnique");
 const carouselInner = document.getElementsByClassName("carousel-inner")[0];
 const imgFolderEditing = "media/editing/";
 const imgFolderTechnique = "media/technique/";
+const imgFolderVideoEditing = "media/videoTechniques/";
 const imgFolderCarousel = "media/exampleImgs/";
 const imagesTechnique = [
     ["charlie","Here we worked with the depth of field. The first image has a wide aperture and because of that almost everything is in focus. The second one was shot with a small aperture and because of it, only Charlie (my dog) is in focus while the Background is blurred out"]
@@ -19,6 +21,9 @@ const imagesEditing = [
     ,["jabra", "The Image got croppped and the Colors were adjusted to look more dreamy"]
     ,["kb", "The Image got cropped"]
     ,["pfp","Here I cropped the Picture and removed myself from the background"]
+];
+const imagesVideoEditing = [
+  ["cutClip.png", "test"]
 ];
 
 const carouselImages = ["DSC_0481.jpg","DSC_0606.jpg","DSC_0607.jpg","DSC_0608.jpg","DSC_0613.jpg"];
@@ -98,6 +103,27 @@ imagesEditing.forEach(function(image, i) {
     imgdiv2.appendChild(img2);
 });
 
+//remove the loading message
+VideoTechniqueWrapper.removeChild(VideoTechniqueWrapper.children[0]);
+
+imagesVideoEditing.forEach(function(image, i) {
+    const flexdiv = document.createElement("div");
+    const div = document.createElement("div");
+    const img = document.createElement("img");
+    const text = document.createElement("p");
+
+    flexdiv.className = "col-sm-4 col-xs-12 flex-item";
+    flexdiv.id = "imgBeforeAfter" + (i+1);
+    div.className = "card h-100";
+    img.className = "img-fluid staticImgLib img-enlargeable";
+    img.src = imgFolderVideoEditing + image[0];
+    text.textContent = image[1];
+
+    VideoTechniqueWrapper.appendChild(flexdiv);
+    flexdiv.appendChild(div);
+    div.appendChild(img);
+    div.appendChild(text);
+});
 
 carouselImages.forEach(function(image, i) {
     const carouselItem = document.createElement("div");
