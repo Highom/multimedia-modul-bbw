@@ -23,7 +23,12 @@ const imagesEditing = [
     ,["pfp","Here I cropped the Picture and removed myself from the background"]
 ];
 const imagesVideoEditing = [
-  ["cutClip.png", "test"]
+  ["cutClip.png","Video cutting","First we cut the single clips and remove the parts we don't need"],
+  ["addClips.PNG","Putting it together","Then we take the parts we cut out and put them all together."],
+  ["cutAndAddAudio.PNG", "Cutting and adding the Audio", "Then we take our sounds and cut and add them. Here I had to cut out the Music at the parts of the nature sounds and made them less loud. I also had to replace audio at the end because you could hear me talk"],
+  ["transitions.PNG","Transitions","We use transitions to fade between or fade in or fade out items. Here we used an additive dissolve to fade in text and later again to fade it out"],
+  ["text.PNG","Text or images","You can add text and images to your scene and style it like you want. You can also move it around with keyframes so it follows a point of your video"],
+  ["tracking.PNG","Tracking Images", "You can track images to surfaces by using motion keyframes. Here I added keyframes to track the image to the skateboard. You can see the path the image will take by the blue line"]
 ];
 
 const carouselImages = ["DSC_0481.jpg","DSC_0606.jpg","DSC_0607.jpg","DSC_0608.jpg","DSC_0613.jpg"];
@@ -110,6 +115,7 @@ imagesVideoEditing.forEach(function(image, i) {
     const flexdiv = document.createElement("div");
     const div = document.createElement("div");
     const img = document.createElement("img");
+    const title = document.createElement("p");
     const text = document.createElement("p");
 
     flexdiv.className = "col-sm-4 col-xs-12 flex-item";
@@ -117,11 +123,14 @@ imagesVideoEditing.forEach(function(image, i) {
     div.className = "card h-100";
     img.className = "img-fluid staticImgLib img-enlargeable";
     img.src = imgFolderVideoEditing + image[0];
-    text.textContent = image[1];
+    title.className = "font-weight-bold"
+    title.textContent = image[1];
+    text.textContent = image[2];
 
     VideoTechniqueWrapper.appendChild(flexdiv);
     flexdiv.appendChild(div);
     div.appendChild(img);
+    div.appendChild(title);
     div.appendChild(text);
 });
 
