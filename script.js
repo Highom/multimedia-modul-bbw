@@ -23,6 +23,9 @@ const imagesEditing = [
     ,["pfp","Here I cropped the Picture and removed myself from the background"]
 ];
 const imagesVideoEditing = [
+  ["formats.jpg","Video Formats","I used mp4 as it is the most used video format"],
+  ["camera.png","Equipment","I used an Canon EOS 250D and a FeiyuTech MG V2 gimbal to film all of the scenes."],
+  ["motive.png","Motive and Rule of Thirds","I used this motive because the water flowing and the sound of it gives a refreshing feeling. I found this a good transition inbetween the work out video. Also this shot complies with the rule of thirds, two thirds of it a water and one third is the shore"],  
   ["cutClip.png","Video cutting","First we cut the single clips and remove the parts we don't need"],
   ["addClips.PNG","Putting it together","Then we take the parts we cut out and put them all together."],
   ["cutAndAddAudio.PNG", "Cutting and adding the Audio", "Then we take our sounds and cut and add them. Here I had to cut out the Music at the parts of the nature sounds and made them less loud. I also had to replace audio at the end because you could hear me talk"],
