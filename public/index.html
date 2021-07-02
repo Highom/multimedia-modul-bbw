@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The one store</title>
-    <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="./favicon.ico">
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -13,7 +13,17 @@
       crossorigin="anonymous"
     />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../style.css" />
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/8.6.4/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/8.6.4/firebase-storage.js"></script>
+    <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark headerfooter">
@@ -21,7 +31,7 @@
         <a class="navbar-brand" href="#">
           <img
             class="logo"
-            src="media/logo.png"
+            src="../media/logo.png"
             width="200"
             height="50"
           />
@@ -58,7 +68,7 @@
     <header>
       <div class="overlay"></div>
       <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-        <source src="media/videos/minecraftSwamp.mp4" type="video/mp4">
+        <source src="../media/videos/minecraftSwamp.mp4" type="video/mp4">
       </video>
       <div class="container h-100 text-center">
         <div class="d-flex  h-100 flex-column justify-content-around">
@@ -93,7 +103,7 @@
           <div class="card h-100">
             <img
               class="card-img-top"
-              src="media/editing/jabra-2.jpg"
+              src="../media/editing/jabra-2.jpg"
               alt="Jabra Elite Active 75t"
             />
             <div class="card-body">
@@ -114,7 +124,7 @@
           <div class="card h-100">
             <img
               class="card-img-top"
-              src="media/nikon.jpg"
+              src="../media/nikon.jpg"
               alt="Nikon D3300"
             />
             <div class="card-body">
@@ -132,7 +142,7 @@
         </div>
         <div class="col-md-4 mb-4">
           <div class="card h-100">
-            <img class="card-img-top" src="media/editing/kb-2.jpg" alt="Custom mechanical Keyboard" />
+            <img class="card-img-top" src="../media/editing/kb-2.jpg" alt="Custom mechanical Keyboard" />
             <div class="card-body">
               <h4 class="card-title">Custom mechanical Keyboard</h4>
               <p class="card-text">
@@ -217,6 +227,18 @@
       </div>
     </div>
   </div> 
+  <section id="firebaseImages">
+    <div class="container text-center upload">
+      <input type="file" id="imageUpload" />
+      <button class="btn btn-primary" onclick="uploadImage()">Upload Image</button>
+    </div>
+    <div class="container">
+      <div id="firebaseContainer" class="flex-wrapper">
+        <!--gets filled from script.js with images from media/videotechniques-->
+        <p>Please wait while the Images are being loaded. This only works if javascript is enabled</p>
+      </div>
+    </div>
+  </section>
   <section id="information">
     <div class="container text-center">
       <h2 class="display-4 text-center mt-3 mb-3">Information</h2>
@@ -248,22 +270,22 @@
         <p class="copyright">&copy; Yannick Ruck 2021</p>
       </div>
     </footer>
+    <script
+    src="script.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
   </body>
-  <script
-  src="script.js"></script>
-  <script
-    src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-    crossorigin="anonymous"
-  ></script>
-  <script
-    src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-    crossorigin="anonymous"
-  ></script>
-  <script
-    src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-    crossorigin="anonymous"
-  ></script>
 </html>

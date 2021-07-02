@@ -3,7 +3,7 @@
   color: #eceff4;
 }
 
-.card {
+.card, .upload {
   background-color: #4c566a!important;
   color: #eceff4!important;  
 }
@@ -165,6 +165,13 @@ header .overlay {
   background-color: black;
   opacity: 0.5;
   z-index: 1;
+}
+
+.upload {
+  padding-bottom: .5rem !important;
+  padding-top: .5rem !important;
+  margin-bottom: .5rem !important;
+  margin-top: .5rem !important;
 }
 
 /*Modal Video*/

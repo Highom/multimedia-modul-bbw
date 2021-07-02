@@ -2,6 +2,7 @@ const imgWrapperEditing = document.getElementById("pictureWrapperEditing");
 const imgTechniqueWrapper = document.getElementById("pictureWrapperTechnique");
 const VideoTechniqueWrapper = document.getElementById("VideoTechnique");
 const carouselInner = document.getElementsByClassName("carousel-inner")[0];
+const firebaseContainer = document.getElementById("firebaseContainer");
 const imgFolderEditing = "media/editing/";
 const imgFolderTechnique = "media/technique/";
 const imgFolderVideoEditing = "media/videoTechniques/";
@@ -35,6 +36,54 @@ const imagesVideoEditing = [
 ];
 
 const carouselImages = ["DSC_0481.jpg","DSC_0606.jpg","DSC_0607.jpg","DSC_0608.jpg","DSC_0613.jpg"];
+
+const firebaseImages = [];
+
+document.addEventListener('DOMContentLoaded', function() {
+  const loadEl = document.querySelector('#load');
+  // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+  // // The Firebase SDK is initialized and available here!
+  //
+  // firebase.auth().onAuthStateChanged(user => { });
+  // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
+  // firebase.firestore().doc('/foo/bar').get().then(() => { });
+  // firebase.functions().httpsCallable('yourFunction')().then(() => { });
+  // firebase.messaging().requestPermission().then(() => { });
+  firebase.storage().ref('/images').listAll().then((res) => {
+    res.items.forEach((item,i) => {
+      item.getDownloadURL().then((url) => {
+        firebaseImages.push(url);
+        appendFirebaseImage(url,i);
+      })
+    });
+  }).catch((error) => {
+    console.error(error);
+  });
+  // firebase.analytics(); // call to activate
+  // firebase.analytics().logEvent('tutorial_completed');
+  // firebase.performance(); // call to activate
+  //
+  // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+
+  try {
+    let app = firebase.app();
+    let features = [
+      'auth', 
+      'database', 
+      'firestore',
+      'functions',
+      'messaging', 
+      'storage', 
+      'analytics', 
+      'remoteConfig',
+      'performance',
+    ].filter(feature => typeof app[feature] === 'function');
+    loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
+  } catch (e) {
+    console.error(e);
+    loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
+  }
+});
 
 imgTechniqueWrapper.removeChild(imgTechniqueWrapper.children[0]);
 
@@ -157,6 +206,24 @@ carouselImages.forEach(function(image, i) {
     carouselInner.appendChild(carouselItem);
 });
 
+  firebaseContainer.removeChild(firebaseContainer.children[0]);
+
+function appendFirebaseImage(url,i) {
+  const flexdiv = document.createElement("div");
+  const div = document.createElement("div");
+  const img = document.createElement("img");
+
+  flexdiv.className = "col-sm-4 col-xs-12 flex-item";
+  flexdiv.id = "firebaseImages" + (i+1);
+  div.className = "card h-100";
+  img.className = "img-fluid staticImgLib";
+  img.src = url;
+
+  firebaseContainer.appendChild(flexdiv);
+  flexdiv.appendChild(div);
+  div.appendChild(img);
+}
+
 //make images with .img-enlargeable full screen on click
 $('.img-enlargeable').click(function() {
     var src = $(this).attr('src');
@@ -193,7 +260,6 @@ $(document).ready(function() {
   $('.video-btn').click(function() {
       $videoSrc = $(this).data( "src" );
   });
-  console.log($videoSrc);
   
   // when the modal is opened autoplay it  
   $('#myModal').on('shown.bs.modal', function (e) {
@@ -209,3 +275,14 @@ $(document).ready(function() {
   })   
 });
     
+function uploadImage(){
+  const ref = firebase.storage().ref('/images');
+  const file = document.querySelector("#imageUpload").files[0];
+  const task = ref.child(file.name).put(file);
+
+  task
+  .then(snapshot => snapshot.ref.getDownloadURL())
+  .then(url => {
+    appendFirebaseImage(url,firebaseImages.length);
+  })
+}
