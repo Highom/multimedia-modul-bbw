@@ -215,7 +215,7 @@ function appendFirebaseImage(url,i) {
 
   flexdiv.className = "col-sm-4 col-xs-12 flex-item";
   flexdiv.id = "firebaseImages" + (i+1);
-  div.className = "card h-100";
+  div.className = "card h-100 p-1";
   img.className = "img-fluid staticImgLib";
   img.src = url;
 
@@ -277,12 +277,13 @@ $(document).ready(function() {
     
 function uploadImage(){
   const ref = firebase.storage().ref('/images');
-  const file = document.querySelector("#imageUpload").files[0];
-  const task = ref.child(file.name).put(file);
+  Array.from( document.querySelector("#imageUpload").files).forEach(file => {
+    const task = ref.child(file.name).put(file);
 
-  task
-  .then(snapshot => snapshot.ref.getDownloadURL())
-  .then(url => {
-    appendFirebaseImage(url,firebaseImages.length);
-  })
+    task
+    .then(snapshot => snapshot.ref.getDownloadURL())
+    .then(url => {
+      appendFirebaseImage(url,firebaseImages.length);
+    })
+  });
 }
