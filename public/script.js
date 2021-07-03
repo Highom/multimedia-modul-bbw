@@ -3,6 +3,8 @@ const imgTechniqueWrapper = document.getElementById("pictureWrapperTechnique");
 const VideoTechniqueWrapper = document.getElementById("VideoTechnique");
 const carouselInner = document.getElementsByClassName("carousel-inner")[0];
 const firebaseContainer = document.getElementById("firebaseContainer");
+const dropContainer = document.getElementById("dropContainer");
+const fileInput = document.querySelector("#imageUpload");
 const imgFolderEditing = "media/editing/";
 const imgFolderTechnique = "media/technique/";
 const imgFolderVideoEditing = "media/videoTechniques/";
@@ -274,10 +276,23 @@ $(document).ready(function() {
       $("#video").attr('src',""); 
   })   
 });
+
+// dragover and dragenter events need to have 'preventDefault' called
+// in order for the 'drop' event to register. 
+// See: https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Drag_operations#droptargets
+dropContainer.ondragover = dropContainer.ondragenter = function(evt) {
+  evt.preventDefault();
+};
+
+dropContainer.ondrop = function(evt) {
+  // pretty simple -- but not for IE :(
+  fileInput.files = evt.dataTransfer.files;
+  evt.preventDefault();
+};
     
 function uploadImage(){
   const ref = firebase.storage().ref('/images');
-  Array.from( document.querySelector("#imageUpload").files).forEach(file => {
+  Array.from(fileInput.files).forEach(file => {
     const task = ref.child(file.name).put(file);
 
     task

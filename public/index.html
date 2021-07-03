@@ -228,14 +228,20 @@
     </div>
   </div> 
   <section id="firebaseImages">
-    <div class="container text-center upload">
-      <input type="file" id="imageUpload" multiple/>
-      <button class="btn btn-primary" onclick="uploadImage()">Upload Image</button>
-    </div>
-    <div class="container">
-      <div id="firebaseContainer" class="flex-wrapper">
-        <!--gets filled from script.js with images from media/videotechniques-->
-        <p>Please wait while the Images are being loaded. This only works if javascript is enabled</p>
+    <div id="dropContainer" class="container text-center">
+      <h3>Firebase Images</h3>
+      <p>These Images can be uploaded over the Site and are then shown below</p>
+      <div id="dropContainer" class="upload">
+        <h4>Upload File</h4>
+        <P>You can upload single or multiple files here. Drag and Drop is also supported.</P>
+        <input type="file" id="imageUpload" multiple/>
+        <button class="btn btn-primary" onclick="uploadImage()">Upload Image</button>
+      </div>
+      <div class="container">
+        <div id="firebaseContainer" class="flex-wrapper">
+          <!--gets filled from script.js with images from media/videotechniques-->
+          <p>Please wait while the Images are being loaded. This only works if javascript is enabled</p>
+        </div>
       </div>
     </div>
   </section>
