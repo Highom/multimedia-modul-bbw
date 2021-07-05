@@ -271,12 +271,20 @@ dropContainer.ondrop = function(evt) {
 function uploadImage(){
   const ref = firebase.storage().ref('/images');
   Array.from(fileInput.files).forEach(file => {
-    const task = ref.child(file.name).put(file);
-
-    task
-    .then(snapshot => snapshot.ref.getDownloadURL())
-    .then(url => {
-      appendFirebaseImage(url,firebaseImages.length);
-    })
+    ref.child(file.name).put(file);
   });
+  firebaseContainer.innerHTML = '<p>Image(s) are getting uploaded</p>';
+  setTimeout(() => {
+    firebaseContainer.innerHTML = '';
+    ref.listAll().then((res) => {
+      res.items.forEach((item,i) => {
+        item.getDownloadURL().then((url) => {
+          firebaseImages.push(url);
+          appendFirebaseImage(url,i);
+        })
+      });
+    }).catch((error) => {
+      console.error(error);
+    });
+  },3000);
 }
