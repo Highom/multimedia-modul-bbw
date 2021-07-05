@@ -32,7 +32,7 @@ const JPEG_EXTENSION = '.jpg';
  * When an image is uploaded in the Storage bucket it is converted to JPEG automatically using
  * ImageMagick.
  */
-exports.convertImageAfterUpload = functions.region('europe-west1').storage.object().onFinalize(async (object) => {
+exports.AfterUploadTasks = functions.region('europe-west1').storage.object().onFinalize(async (object) => {
   const filePath = object.name;
   const baseFileName = path.basename(filePath, path.extname(filePath));
   const fileDir = path.dirname(filePath);
@@ -47,11 +47,11 @@ exports.convertImageAfterUpload = functions.region('europe-west1').storage.objec
     return null;
   }
 
-    // Exit if the image is already a thumbnail.
-    if (baseFileName.startsWith('edit_')) {
-      functions.logger.log('Already edited.');
-      return null;
-    }  
+  // Exit if the image is already edited.
+  if (baseFileName.startsWith('edit_')) {
+    functions.logger.log('Already edited.');
+    return null;
+  }  
 
   const bucket = admin.storage().bucket(object.bucket);
   // Create the temp directory where the storage file will be downloaded.
@@ -59,8 +59,10 @@ exports.convertImageAfterUpload = functions.region('europe-west1').storage.objec
   // Download file from bucket.
   await bucket.file(filePath).download({destination: tempLocalFile});
   functions.logger.log('The file has been downloaded to', tempLocalFile);
+  // Creating new jpg file
   const buffer = await sharp(tempLocalFile)
   .resize(858,480)
+  .composite([{ input: 'logo.png' }])
   .jpeg()
   .toBuffer().catch(err =>{
     functions.logger.error('Conversion failed.',err);
