@@ -273,7 +273,7 @@ function uploadImage(){
   Array.from(fileInput.files).forEach(file => {
     ref.child(file.name).put(file);
   });
-  firebaseContainer.innerHTML = '<p>Image(s) are getting uploaded</p>';
+  firebaseContainer.innerHTML = '<p>Image(s) are getting uploaded and edited.</p><br\><p style="font-size:10px;">(it can be that images aren\'t reloaded properly because they took longer to edit. This function only waits for 8 seconds until it requests the new data as I have found no way of knowing when everything is finished on the server)</p>';
   setTimeout(() => {
     firebaseContainer.innerHTML = '';
     ref.listAll().then((res) => {
@@ -286,5 +286,5 @@ function uploadImage(){
     }).catch((error) => {
       console.error(error);
     });
-  },3000);
+  },8000);
 }
