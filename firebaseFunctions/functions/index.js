@@ -60,7 +60,7 @@ exports.convertImageAfterUpload = functions.region('europe-west1').storage.objec
   .toFormat('jpg')
   .withMetadata()
   .toBuffer().catch(err =>{
-    functions.logger.error('Conversion failed. Error:',err);
+    functions.logger.error('Conversion failed.',err);
   });
   await sharp(buffer).toFile(tempLocalJPEGFile).catch(err =>{
     functions.logger.error('Saving new File failed. Error:',err);

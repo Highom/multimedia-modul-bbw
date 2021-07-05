@@ -36,13 +36,10 @@ const imagesVideoEditing = [
   ["text.PNG","Text or images","You can add text and images to your scene and style it like you want. You can also move it around with keyframes so it follows a point of your video"],
   ["tracking.PNG","Tracking Images", "You can track images to surfaces by using motion keyframes. Here I added keyframes to track the image to the skateboard. You can see the path the image will take by the blue line"]
 ];
-
 const carouselImages = ["DSC_0481.jpg","DSC_0606.jpg","DSC_0607.jpg","DSC_0608.jpg","DSC_0613.jpg"];
-
 const firebaseImages = [];
 
 document.addEventListener('DOMContentLoaded', function() {
-  const loadEl = document.querySelector('#load');
   // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
   // // The Firebase SDK is initialized and available here!
   //
@@ -66,25 +63,6 @@ document.addEventListener('DOMContentLoaded', function() {
   // firebase.performance(); // call to activate
   //
   // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-
-  try {
-    let app = firebase.app();
-    let features = [
-      'auth', 
-      'database', 
-      'firestore',
-      'functions',
-      'messaging', 
-      'storage', 
-      'analytics', 
-      'remoteConfig',
-      'performance',
-    ].filter(feature => typeof app[feature] === 'function');
-    loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-  } catch (e) {
-    console.error(e);
-    loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-  }
 });
 
 imgTechniqueWrapper.removeChild(imgTechniqueWrapper.children[0]);
