@@ -41,8 +41,6 @@ exports.convertImageAfterUpload = functions.region('europe-west1').storage.objec
   const tempLocalDir = path.dirname(tempLocalFile);
   const tempLocalJPEGFile = path.join(os.tmpdir(), JPEGFilePath);
 
-  sharp.cache(false);
-
   // Exit if this is triggered on a file that is not an image.
   if (!object.contentType.startsWith('image/')) {
     functions.logger.log('This is not an image.');
@@ -55,10 +53,9 @@ exports.convertImageAfterUpload = functions.region('europe-west1').storage.objec
   // Download file from bucket.
   await bucket.file(filePath).download({destination: tempLocalFile});
   functions.logger.log('The file has been downloaded to', tempLocalFile);
-  let buffer = await sharp(tempLocalFile)
+  const buffer = await sharp(tempLocalFile)
   .resize(858,480)
-  .toFormat('jpg')
-  .withMetadata()
+  .jpeg()
   .toBuffer().catch(err =>{
     functions.logger.error('Conversion failed.',err);
   });
