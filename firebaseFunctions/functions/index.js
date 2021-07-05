@@ -36,7 +36,7 @@ exports.convertImageAfterUpload = functions.region('europe-west1').storage.objec
   const filePath = object.name;
   const baseFileName = path.basename(filePath, path.extname(filePath));
   const fileDir = path.dirname(filePath);
-  const JPEGFilePath = path.normalize(path.format({dir: fileDir, name: baseFileName, ext: JPEG_EXTENSION}));
+  const JPEGFilePath = path.normalize(path.format({dir: fileDir, name: "edit_"+ baseFileName, ext: JPEG_EXTENSION}));
   const tempLocalFile = path.join(os.tmpdir(), filePath);
   const tempLocalDir = path.dirname(tempLocalFile);
   const tempLocalJPEGFile = path.join(os.tmpdir(), JPEGFilePath);
@@ -46,6 +46,12 @@ exports.convertImageAfterUpload = functions.region('europe-west1').storage.objec
     functions.logger.log('This is not an image.');
     return null;
   }
+
+    // Exit if the image is already a thumbnail.
+    if (baseFileName.startsWith('edit_')) {
+      functions.logger.log('Already edited.');
+      return null;
+    }  
 
   const bucket = admin.storage().bucket(object.bucket);
   // Create the temp directory where the storage file will be downloaded.
